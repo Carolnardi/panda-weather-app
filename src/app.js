@@ -1,5 +1,4 @@
 function displayTemperature(response) {
-  console.log(response.data.main.temp);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
@@ -14,10 +13,6 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formateDate(response.data.dt * 1000);
 }
-
-let apiKey = "56723cac732ebbf7ba15a7ae4506313e";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Boston&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
 
 function formateDate(timestamp) {
   // calculate the date and return something like that Friday 8 PM
@@ -42,3 +37,7 @@ function formateDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+let apiKey = "56723cac732ebbf7ba15a7ae4506313e";
+let city = "Boston";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayTemperature);
