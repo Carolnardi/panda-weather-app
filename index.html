@@ -11,36 +11,50 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="src/style.css" />
     <title>Panda Weather App</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-        <!-- the box will wrapper the content-->
-        <h1>Boston</h1>
-        <ul>
-          <li>Friday 11:00 AM</li>
-          <li>Sunny</li>
-        </ul>
-        <div class="row">
-          <!-- created the table-->
-          <div class="col-md-6">
-            <!-- first columun-->
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Cloudy"
-            />
-            12ºC | ºF
-          </div>
-          <div class="col-md-6">
-            <!-- second columun-->
-
+        <!-- the box will wrapper the ALL content-->
+        <div class="weather-app">
+          <!-- the box will wrapper the weather content-->
+          <div class="overview">
+            <h1>Boston</h1>
             <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity:75%</li>
-              <li>Wind: 2 Km/h</li>
+              <li>Friday 11:00 AM</li>
+              <li>Sunny</li>
             </ul>
+          </div>
+          <div class="row">
+            <!-- created the table-->
+            <div class="col-6">
+              <!-- first columun-->
+              <div class="clearfix weather-temperature">
+                <!-- for using float-->
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="Cloudy"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <!-- for the number be fix and float-->
+                  <strong>12</strong
+                  ><span class="units">ºC | <a href="#">ºF</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <!-- second columun-->
+
+              <ul>
+                <li>Precipitation: 0%</li>
+                <li>Humidity:75%</li>
+                <li>Wind: 2 Km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
         <small>
