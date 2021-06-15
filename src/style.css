@@ -22,6 +22,9 @@ li {
   font-weight: 100;
   line-height: 20px;
 }
+a {
+  text-decoration: none;
+}
 li:first-letter {
   text-transform: capitalize;
 }
@@ -55,4 +58,13 @@ li:first-letter {
 }
 .float-left {
   display: inline;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
