@@ -76,3 +76,17 @@ li:first-letter {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 18px;
+  color: rgb(103, 155, 156);
+}
+.weather-forecast-temperature {
+  color: rgb(64, 128, 129);
+
+  font-size: 14px;
+}
