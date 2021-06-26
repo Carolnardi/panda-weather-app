@@ -96,9 +96,10 @@ li:first-letter {
 }
 .weather-forecast-date {
   font-size: 18px;
-  color: #404040;
+
+  color: #989898;
 }
 .weather-forecast-temperature {
-  color: #989898;
+  color: #4d5d53;
   font-size: 12px;
 }
