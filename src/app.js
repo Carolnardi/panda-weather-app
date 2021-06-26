@@ -68,23 +68,6 @@ function ControlSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-  temperatureElement.innerHTML = fahrenheitTemperature;
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -116,10 +99,9 @@ function displayForecast(response) {
           <div class="weather-forecast-temperature">
             <span class="weather-forecast-temperature-max">${Math.round(
               forecastDay.temp.max
-            )}°C</span
-                  > | <span class="weather-forecast-temperature-min">${Math.round(
-                    forecastDay.temp.min
-                  )}°F</span>
+            )}° </span>| <span class="weather-forecast-temperature-min">${Math.round(
+          forecastDay.temp.min
+        )}° </span>
             </div>
           </div>`;
     }
@@ -128,15 +110,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", ControlSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Boston");
